@@ -50,3 +50,35 @@ print 'Variable b Is: ', 'One' if (b == 1) else 'Not One'
 print 'Variable b Is: ', 'Even' if (b % 2 == 0) else 'Odd'
 max = a if (a > b) else b
 print 'Greater value: ', max
+
+# precedence
+a = 2
+b = 4
+c = 8
+print '\nDefault order:\t ', a, '*', c, '+', b, '=', a * c + b
+print 'Forced order:\t ', a, '*(', c, '+', b, ')=', a * (c + b)
+print 'Default order:\t ', c, '//', b, '-', a, '=', c // b - a
+print 'Forced order:\t ', c, '//(', b, '-', a, ')=', c // (b - a)
+print 'Default order:\t ', c, '%', a, '+', b, '=', c % a + b
+print 'Forced order:\t ', c, '%(', a, '+', b, ')=', c % (a + b)
+print 'Default order:\t ', c, '**', a, '+', b, '=', c ** a + b
+print 'Forced order:\t ', c, '**(', a, '+', b, ')=', c ** (a + b)
+
+# types
+a = input('Enter A Number: ')
+b = input('Enter Another Number: ')
+sum = a + b
+print '\nData Type sum: ', sum, type(sum)
+sum = int(a) + int(b)
+print '\nData Type sum: ', sum, type(sum)
+sum = chr(sum)
+print '\nData Type sum: ', sum, type(sum)
+
+# bitwise
+a = 10
+b = 5
+print '\na = ', a, '\tb = ', b
+a = a ^ b   # 1010 ^ 0101 = 1111 (15)
+b = a ^ b   # 1111 ^ 0101 = 1010 (10)
+a = a ^ b   # 1111 ^ 1010 = 0101 (5)
+print '\na = ', a, '\tb = ', b
