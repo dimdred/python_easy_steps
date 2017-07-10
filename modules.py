@@ -9,7 +9,7 @@ cat.purr('Kitty')
 cat.lick('Kitty')
 cat.nap('Kitty')
 
-pet = input('Enter a pet Name:')
+pet = raw_input('Enter a pet Name:')
 cat.purr(pet)
 cat.lick(pet)
 cat.nap(pet)
