@@ -88,3 +88,40 @@ file = open('poem.txt', 'a') # add string
 file.write('(Oscar Wilde)')
 file.close()
 
+# update
+
+text = 'The political slogan "Workers Unite! is from Manifesto'
+with open('update.txt','w') as file:
+    file.write(text)
+    print '\nFile Closed?', file.closed
+print 'File closed?', file.closed
+
+with open('update.txt', 'r+') as file:
+    text = file.read()
+    print 'String:', text
+    print '\nPosition In File Now:', file.tell() #get position
+    position = file.seek(23) # set position for read or write
+    print '\nPosition In File Now:', file.tell()
+    file.write('All Lands')
+    file.seek(49)
+    file.write('the tombstone of Karl Marx')
+    file.seek(0)
+    file.read()
+    print '\nString:', text
+
+# data conservation
+import pickle, os
+
+if not os.path.isfile('pickle.dat'):
+    data = [0,1]
+    data[0] = raw_input('Enter Topic:') # for string type
+    data[1] = input('Enter Series:')
+    file = open('pickle.dat', 'wb')
+    pickle.dump(data, file) # conservation
+    file.close()
+else:
+    file = open('pickle.dat', 'rb')
+    data = pickle.load(file) # load conservation data
+    file.close()
+print 'Welcome:', data[0], data[1]
+print 'Types:', data[0], type(data[0]), data[1], type(data[1])
